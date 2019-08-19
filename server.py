@@ -47,6 +47,7 @@ def accept_connection():
     while True:
         try:
             conn, address = s.accept()
+            s.setblocking(1)
             print("The connection has been established with the address : "+ str(address[0]))
             all_connections.append(conn)
             all_address.append(address)
